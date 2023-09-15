@@ -1,44 +1,45 @@
-const respota1 = prompt("Qual área você gostaria de seguir? 1- Front-End || 2 - Back-End.\nDigite sua opção: ");
+const area = prompt("Qual área você gostaria de seguir, 'Front-End' ou 'Back-End'? Digite nome da área: ");
 
-if (respota1 == 1) {
-    const respota2 = prompt("\nO que deseja aprender no Front-End? 1 - React || 2 - Vue. \nDigite sua opção: ");
+let linguagen = '';
 
-    if (respota2 == 1) {
-        alert("React!? Boa escolha.");
-    } else if (respota2 == 2) {
-        alert("Vue!? Boa escolha.");
-    } else {
-        alert(`Opção "${respota1}" inválida.`);
+if (area == 'Front-End') {
+    linguagen = prompt(`O que deseja aprender no ${area}, 'React' ou 'Vue'? Digite sua opção: `);
+
+    if (linguagen == 'React' || linguagen == 'Vue') {
+        alert(`${linguagen}!? Boa escolha.`);
+    } 
+ else {
+        alert(`Opção "${linguagen}" inválida.`);
     }
 }  
 
-if (respota1 == 2) {
-    const respota2 = prompt("\nO que deseja aprender no Back-End? 1 - C# || 2 - Java. \nDigite sua opção: ");
+if (area == 'Back-End') {
+    linguagen = prompt(`O que deseja aprender no ${area}, 'C#' ou 'Java'? Digite sua opção: `);
 
-    if (respota2 == 1) {
-        alert("C#!? Boa escolha.");
-    } else if (respota2 == 2) {
-        alert("Java!? Boa escolha.");
+    if (linguagen == 'C#' || linguagen == 'Java') {
+        alert(`${linguagen}? Boa escolha.`);
     } else {
-        alert(`Opção "${respota2}" inválida.`);
+        alert(`Opção "${linguagen}" inválida.`);
     }
 } 
 
-const dev = prompt("\nVocê quer seguir se especializando na área escolhida ou seguir se desenvolvendo para se tornar Fullstack? Digite 1 para Especializar ou 2 para Fulstack. \nDigite sua opção: ");
+const especializarOuFullstack = prompt(`\nVocê quer seguir se especializando na área de ${area} ou seguir se desenvolvendo para se tornar Fullstack? Digite 1 para Especializar ou 2 para FulLstack. \nDigite sua opção: `);
 
-if (dev == 1) {
-    alert('Que bom que você quer continuar se especializando na área!')
-} else if (dev == 2) {
-    alert('Que bom que você quer virar um desenvolvedor Fullstack!')
+if (especializarOuFullstack == 1) {
+    alert(`É ótimo  querer aprender mais sobre ${linguagen} para se especializar no ${area}!`)
+} else if (especializarOuFullstack == 2) {
+    alert(`Nesse caso é ideal aprender novas linguagens, além da ${linguagen} para se tornar um desenvolvedor Fullstack!`)
 } else {
-    alert(`Opção "${dev}" inválida.`);
+    alert(`Opção "${especializarOuFullstack}" inválida.`);
 }
 
 let listaTecnologias = [];
+let msg = prompt("Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo.")
 
-do {
-    tecnologia = prompt("\nQuais são as tecnologias nas quais a você gostaria de se especializar ou de conhecer? Quando quiser finalizar digite 0.");
+while (msg == 'ok') {
+    let tecnologia = prompt("\nQuais são as tecnologias nas quais a você gostaria de se especializar ou de conhecer?");
     listaTecnologias.push(tecnologia);
-} while (tecnologia != 0);
+    msg = prompt("Tem mais alguma tecnologia que você gostaria de aprender? Digite 'ok' em caso positivo.")
+} 
 
-console.log(listaTecnologias);
+alert(`Você deseja aprender, ${listaTecnologias}.`);
