@@ -1,21 +1,30 @@
-let adicionar = prompt("Deseja adicionar item a sua lista de Compras? 'Sim' ou 'Não' ");
 let frutas = [];
 let doces = [];
 let mercearia = [];
 let gelados = [];
 
-while (adicionar == 'Sim') {
+let adicionar = 'Sim';
 
-    let produto = prompt('Informe o Produto a ser adicionado ou digite "Finalizar" para ver sua Lista:  ');
+while (adicionar != 'Não') {
 
-    if (produto == "Finalizar") {
+    let adicionar = prompt("Deseja adicionar item a sua lista de Compras? 'Sim' ou 'Não' ");
+
+    while (adicionar != 'Sim' && adicionar != 'Não') {
+
+        alert(`Operação "${adicionar}" não recohecida ou inválida!"`)
+
+        adicionar = prompt("Deseja adicionar item a sua lista de Compras? 'Sim' ou 'Não' ");
+    }
+    if(adicionar == 'Não'){
         alert(`Sua Lista de Compras: 
-        \nFrutas: ${frutas} 
-        \nDoces: ${doces}
-        \nMercearia: ${mercearia}
-        \nGelados: ${gelados}`);
+        \nFrutas: ${frutas}. 
+        \nDoces: ${doces}.
+        \nMercearia: ${mercearia}.
+        \nGelados: ${gelados}.`);
         break;
     }
+
+    let produto = prompt('Informe o Produto a ser adicionado: ');
 
     let grupo = prompt(`Selecione o grupo na qual ${produto} será adicionado: 1 - Frutas, 2 - Doces, 3 - Mercearia, 4 - Gelados: `)
 
