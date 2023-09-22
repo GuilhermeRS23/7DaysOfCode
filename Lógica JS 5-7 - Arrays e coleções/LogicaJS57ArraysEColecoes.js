@@ -15,14 +15,8 @@ while (adicionar != 'Não') {
 
         adicionar = prompt("Deseja adicionar item a sua lista de Compras? 'Sim' ou 'Não' ");
     }
-    if(adicionar == 'Não'){
-        alert(`Sua Lista de Compras: 
-        \nFrutas: ${frutas}. 
-        \nDoces: ${doces}.
-        \nMercearia: ${mercearia}.
-        \nGelados: ${gelados}.`);
-        break;
-    }
+
+    if (adicionar == 'Não') { break; }
 
     let produto = prompt('Informe o Produto a ser adicionado: ');
 
@@ -50,4 +44,8 @@ while (adicionar != 'Não') {
             break;
     }
 
-}
+} alert(`Sua Lista de Compras: 
+\nFrutas: ${frutas}. 
+\nDoces: ${doces}.
+\nMercearia: ${mercearia}.
+\nGelados: ${gelados}.`);
